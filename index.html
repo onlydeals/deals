@@ -1,251 +1,231 @@
-<!DOCTYPE HTML>
-<!--
-	Dopetrope by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Dopetrope by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="homepage is-preload">
-		<div id="page-wrapper">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>ONLYDEALS — Today’s Best Deals, Curated</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Hand-picked daily deals on tech, home, and lifestyle. Fast, no fluff.">
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="preload" as="image" href="images/pic02.jpg">
+  <meta property="og:title" content="ONLYDEALS — Today’s Best Deals">
+  <meta property="og:description" content="Hand-picked daily deals on tech, home, and lifestyle." />
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://YOUR_DOMAIN/">
+  <meta property="og:image" content="images/pic02.jpg">
+  <meta name="twitter:card" content="summary_large_image">
 
-			<!-- Header -->
-				<section id="header">
+  <!-- JSON-LD: Organization (optional) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"ONLYDEALS",
+    "url":"https://YOUR_DOMAIN/",
+    "sameAs":["https://github.com/YOUR_USERNAME"]
+  }
+  </script>
 
-					<!-- Logo -->
-						<h1><a href="index.html">Dopetrope</a></h1>
+  <!-- Optional: Google Tag Manager / analytics -->
+  <!-- <script>/* GTM snippet here */</script> -->
+</head>
+<body class="homepage is-preload">
+<div id="page-wrapper">
 
-					<!-- Nav -->
-						<nav id="nav">
-							<ul>
-								<li class="current"><a href="index.html">Home</a></li>
-								<li>
-									<a href="#">Dropdown</a>
-									<ul>
-										<li><a href="#">Lorem ipsum dolor</a></li>
-										<li><a href="#">Magna phasellus</a></li>
-										<li><a href="#">Etiam dolore nisl</a></li>
-										<li>
-											<a href="#">Phasellus consequat</a>
-											<ul>
-												<li><a href="#">Magna phasellus</a></li>
-												<li><a href="#">Etiam dolore nisl</a></li>
-												<li><a href="#">Veroeros feugiat</a></li>
-												<li><a href="#">Nisl sed aliquam</a></li>
-												<li><a href="#">Dolore adipiscing</a></li>
-											</ul>
-										</li>
-										<li><a href="#">Veroeros feugiat</a></li>
-									</ul>
-								</li>
-								<li><a href="left-sidebar.html">Left Sidebar</a></li>
-								<li><a href="right-sidebar.html">Right Sidebar</a></li>
-								<li><a href="no-sidebar.html">No Sidebar</a></li>
-							</ul>
-						</nav>
+  <!-- Header / Nav -->
+  <section id="header">
+    <h1><a href="index.html">ONLYDEALS</a></h1>
+    <nav id="nav" aria-label="Primary">
+      <ul>
+        <li class="current"><a href="index.html">Home</a></li>
+        <li><a href="#categories">Categories</a></li>
+        <li><a href="#deals">Today’s Deals</a></li>
+        <li><a href="#newsletter">Subscribe</a></li>
+        <li><a href="#disclosure">Disclosure</a></li>
+      </ul>
+    </nav>
 
-					<!-- Banner -->
-						<section id="banner">
-							<header>
-								<h2>Howdy. This is Dopetrope.</h2>
-								<p>A responsive template by HTML5 UP</p>
-							</header>
-						</section>
+    <!-- Hero -->
+    <section id="banner">
+      <header>
+        <h2>Best deals. Zero noise.</h2>
+        <p>Three-minute scroll. Maximum savings.</p>
+        <a class="button large" href="#deals">Shop Today’s Picks</a>
+      </header>
+    </section>
 
-					<!-- Intro -->
-						<section id="intro" class="container">
-							<div class="row">
-								<div class="col-4 col-12-medium">
-									<section class="first">
-										<i class="icon solid featured fa-cog"></i>
-										<header>
-											<h2>Ipsum consequat</h2>
-										</header>
-										<p>Nisl amet dolor sit ipsum veroeros sed blandit consequat veroeros et magna tempus.</p>
-									</section>
-								</div>
-								<div class="col-4 col-12-medium">
-									<section class="middle">
-										<i class="icon solid featured alt fa-bolt"></i>
-										<header>
-											<h2>Magna etiam dolor</h2>
-										</header>
-										<p>Nisl amet dolor sit ipsum veroeros sed blandit consequat veroeros et magna tempus.</p>
-									</section>
-								</div>
-								<div class="col-4 col-12-medium">
-									<section class="last">
-										<i class="icon solid featured alt2 fa-star"></i>
-										<header>
-											<h2>Tempus adipiscing</h2>
-										</header>
-										<p>Nisl amet dolor sit ipsum veroeros sed blandit consequat veroeros et magna tempus.</p>
-									</section>
-								</div>
-							</div>
-							<footer>
-								<ul class="actions">
-									<li><a href="#" class="button large">Get Started</a></li>
-									<li><a href="#" class="button alt large">Learn More</a></li>
-								</ul>
-							</footer>
-						</section>
+    <!-- Quick value props -->
+    <section id="intro" class="container" aria-label="Highlights">
+      <div class="row">
+        <div class="col-4 col-12-medium">
+          <section class="first">
+            <i class="icon solid featured fa-bolt"></i>
+            <header><h2>Daily & Verified</h2></header>
+            <p>We check price history & availability before posting.</p>
+          </section>
+        </div>
+        <div class="col-4 col-12-medium">
+          <section class="middle">
+            <i class="icon solid featured alt fa-shield-alt"></i>
+            <header><h2>No Spam, Just Deals</h2></header>
+            <p>Curated essentials, not a firehose.</p>
+          </section>
+        </div>
+        <div class="col-4 col-12-medium">
+          <section class="last">
+            <i class="icon solid featured alt2 fa-tags"></i>
+            <header><h2>Affiliate-Supported</h2></header>
+            <p>Links may earn us a commission—at no cost to you.</p>
+          </section>
+        </div>
+      </div>
+    </section>
+  </section>
 
-				</section>
+  <!-- Categories -->
+  <section id="categories" class="container">
+    <header class="major"><h2>Browse by Category</h2></header>
+    <ul class="actions" style="flex-wrap:wrap;gap:.5rem">
+      <li><a class="button alt" href="#deals-tech">Tech</a></li>
+      <li><a class="button alt" href="#deals-home">Home</a></li>
+      <li><a class="button alt" href="#deals-beauty">Beauty</a></li>
+      <li><a class="button alt" href="#deals-fitness">Fitness</a></li>
+      <li><a class="button alt" href="#deals-fashion">Fashion</a></li>
+    </ul>
+  </section>
 
-			<!-- Main -->
-				<section id="main">
-					<div class="container">
-						<div class="row">
-							<div class="col-12">
+  <!-- Deals Grid -->
+  <section id="main">
+    <div class="container" id="deals">
+      <header class="major"><h2>Today’s Editor Picks</h2></header>
+      <div class="row">
 
-								<!-- Portfolio -->
-									<section>
-										<header class="major">
-											<h2>My Portfolio</h2>
-										</header>
-										<div class="row">
-											<div class="col-4 col-6-medium col-12-small">
-												<section class="box">
-													<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
-													<header>
-														<h3>Ipsum feugiat et dolor</h3>
-													</header>
-													<p>Lorem ipsum dolor sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.</p>
-													<footer>
-														<ul class="actions">
-															<li><a href="#" class="button alt">Find out more</a></li>
-														</ul>
-													</footer>
-												</section>
-											</div>
-											<div class="col-4 col-6-medium col-12-small">
-												<section class="box">
-													<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
-													<header>
-														<h3>Sed etiam lorem nulla</h3>
-													</header>
-													<p>Lorem ipsum dolor sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.</p>
-													<footer>
-														<ul class="actions">
-															<li><a href="#" class="button alt">Find out more</a></li>
-														</ul>
-													</footer>
-												</section>
-											</div>
-											<div class="col-4 col-6-medium col-12-small">
-												<section class="box">
-													<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
-													<header>
-														<h3>Consequat et tempus</h3>
-													</header>
-													<p>Lorem ipsum dolor sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.</p>
-													<footer>
-														<ul class="actions">
-															<li><a href="#" class="button alt">Find out more</a></li>
-														</ul>
-													</footer>
-												</section>
-											</div>
-											<div class="col-4 col-6-medium col-12-small">
-												<section class="box">
-													<a href="#" class="image featured"><img src="images/pic05.jpg" alt="" /></a>
-													<header>
-														<h3>Blandit sed adipiscing</h3>
-													</header>
-													<p>Lorem ipsum dolor sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.</p>
-													<footer>
-														<ul class="actions">
-															<li><a href="#" class="button alt">Find out more</a></li>
-														</ul>
-													</footer>
-												</section>
-											</div>
-											<div class="col-4 col-6-medium col-12-small">
-												<section class="box">
-													<a href="#" class="image featured"><img src="images/pic06.jpg" alt="" /></a>
-													<header>
-														<h3>Etiam nisl consequat</h3>
-													</header>
-													<p>Lorem ipsum dolor sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.</p>
-													<footer>
-														<ul class="actions">
-															<li><a href="#" class="button alt">Find out more</a></li>
-														</ul>
-													</footer>
-												</section>
-											</div>
-											<div class="col-4 col-6-medium col-12-small">
-												<section class="box">
-													<a href="#" class="image featured"><img src="images/pic07.jpg" alt="" /></a>
-													<header>
-														<h3>Dolore nisl feugiat</h3>
-													</header>
-													<p>Lorem ipsum dolor sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.</p>
-													<footer>
-														<ul class="actions">
-															<li><a href="#" class="button alt">Find out more</a></li>
-														</ul>
-													</footer>
-												</section>
-											</div>
-										</div>
-									</section>
+        <!-- DEAL CARD (duplicate as needed) -->
+        <div class="col-4 col-6-medium col-12-small" id="deals-tech">
+          <section class="box">
+            <a class="image featured" href="#YOUR_AFF_LINK#?utm_source=onlydeals&utm_medium=site&utm_campaign=tech"
+               target="_blank" rel="nofollow sponsored noopener">
+              <img src="images/pic02.jpg" alt="Wireless earbuds with ANC" loading="lazy" />
+            </a>
+            <header>
+              <h3>ANC Wireless Earbuds</h3>
+              <p><strong>$49.99</strong> <del>$99.99</del> · Ends tonight</p>
+            </header>
+            <ul>
+              <li>Active noise canceling · Bluetooth 5.3</li>
+              <li>IPX5 water-resistant · 30h case</li>
+            </ul>
+            <footer>
+              <a class="button icon solid fa-shopping-cart"
+                 href="#YOUR_AFF_LINK#?utm_source=onlydeals&utm_medium=site&utm_campaign=tech"
+                 target="_blank" rel="nofollow sponsored noopener">Get Deal</a>
+              <a class="button alt" href="#price-terms" aria-label="See price terms">Price terms</a>
+            </footer>
+          </section>
+        </div>
 
-							</div>
-							<div class="col-12">
+        <div class="col-4 col-6-medium col-12-small" id="deals-home">
+          <section class="box">
+            <a class="image featured" href="#YOUR_AFF_LINK#"
+               target="_blank" rel="nofollow sponsored noopener">
+              <img src="images/pic03.jpg" alt="Robot vacuum cleaner" loading="lazy" />
+            </a>
+            <header>
+              <h3>Robot Vacuum w/ Mapping</h3>
+              <p><strong>$179</strong> <del>$299</del> · Coupon CLIP10</p>
+            </header>
+            <ul>
+              <li>Multi-room mapping · Auto-dock</li>
+              <li>Great for pets & carpets</li>
+            </ul>
+            <footer>
+              <a class="button icon solid fa-shopping-cart" href="#YOUR_AFF_LINK#"
+                 target="_blank" rel="nofollow sponsored noopener">Get Deal</a>
+            </footer>
+          </section>
+        </div>
 
-								<!-- Blog -->
-									<section>
-										<header class="major">
-											<h2>The Blog</h2>
-										</header>
-										<div class="row">
-											<div class="col-6 col-12-small">
-												<section class="box">
-													<a href="#" class="image featured"><img src="images/pic08.jpg" alt="" /></a>
-													<header>
-														<h3>Magna tempus consequat</h3>
-														<p>Posted 45 minutes ago</p>
-													</header>
-													<p>Lorem ipsum dolor sit amet sit veroeros sed et blandit consequat sed veroeros lorem et blandit adipiscing feugiat phasellus tempus hendrerit, tortor vitae mattis tempor, sapien sem feugiat sapien, id suscipit magna felis nec elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos lorem ipsum dolor sit amet.</p>
-													<footer>
-														<ul class="actions">
-															<li><a href="#" class="button icon solid fa-file-alt">Continue Reading</a></li>
-															<li><a href="#" class="button alt icon solid fa-comment">33 comments</a></li>
-														</ul>
-													</footer>
-												</section>
-											</div>
-											<div class="col-6 col-12-small">
-												<section class="box">
-													<a href="#" class="image featured"><img src="images/pic09.jpg" alt="" /></a>
-													<header>
-														<h3>Aptent veroeros aliquam</h3>
-														<p>Posted 45 minutes ago</p>
-													</header>
-													<p>Lorem ipsum dolor sit amet sit veroeros sed et blandit consequat sed veroeros lorem et blandit adipiscing feugiat phasellus tempus hendrerit, tortor vitae mattis tempor, sapien sem feugiat sapien, id suscipit magna felis nec elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos lorem ipsum dolor sit amet.</p>
-													<footer>
-														<ul class="actions">
-															<li><a href="#" class="button icon solid fa-file-alt">Continue Reading</a></li>
-															<li><a href="#" class="button alt icon solid fa-comment">33 comments</a></li>
-														</ul>
-													</footer>
-												</section>
-											</div>
-										</div>
-									</section>
+        <div class="col-4 col-6-medium col-12-small" id="deals-fitness">
+          <section class="box">
+            <a class="image featured" href="#YOUR_AFF_LINK#"
+               target="_blank" rel="nofollow sponsored noopener">
+              <img src="images/pic04.jpg" alt="Adjustable dumbbells set" loading="lazy" />
+            </a>
+            <header>
+              <h3>Adjustable Dumbbells (25 lb)</h3>
+              <p><strong>$89</strong> <del>$149</del> · Limited stock</p>
+            </header>
+            <ul>
+              <li>2.5 lb increments · Compact stand</li>
+            </ul>
+            <footer>
+              <a class="button icon solid fa-shopping-cart" href="#YOUR_AFF_LINK#"
+                 target="_blank" rel="nofollow sponsored noopener">Get Deal</a>
+            </footer>
+          </section>
+        </div>
 
-							</div>
-						</div>
-					</div>
-				</section>
+      </div>
+    </div>
 
+    <!-- Newsletter -->
+    <div class="container" id="newsletter" style="margin-top:2rem">
+      <section class="box">
+        <header class="major"><h2>Get the daily short list</h2></header>
+        <form action="https://YOUR_EMAIL_PROVIDER_ENDPOINT" method="post">
+          <div class="row gtr-50">
+            <div class="col-8 col-12-small">
+              <input type="email" name="email" placeholder="you@example.com" required />
+            </div>
+            <div class="col-4 col-12-small">
+              <button class="button fit" type="submit">Subscribe</button>
+            </div>
+          </div>
+          <p style="font-size:.9rem;opacity:.8">No spam. One email most weekdays. Unsubscribe anytime.</p>
+        </form>
+      </section>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <section id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-8 col-12-medium" id="disclosure">
+          <section>
+            <header><h2>Affiliate Disclosure</h2></header>
+            <p>
+              ONLYDEALS may earn a commission from qualifying purchases made through links on this site.
+              This helps keep the site running at no extra cost to you. Prices and coupons can change quickly—please
+              confirm at checkout.
+            </p>
+          </section>
+        </div>
+        <div class="col-4 col-12-medium">
+          <section>
+            <header><h2>Contact</h2></header>
+            <ul class="divided">
+              <li><a href="mailto:hello@yourdomain.com">hello@yourdomain.com</a></li>
+              <li><a href="/privacy.html">Privacy</a></li>
+              <li><a href="/terms.html">Terms</a></li>
+            </ul>
+          </section>
+        </div>
+        <div class="col-12">
+          <div id="copyright">
+            <ul class="links">
+              <li>&copy; <span id="yr"></span> ONLYDEALS. All rights reserved.</li>
+              <li>Theme base: <a href="https://html5up.net">HTML5 UP</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+		
+			
 			<!-- Footer -->
 				<section id="footer">
 					<div class="container">
@@ -253,54 +233,11 @@
 							<div class="col-8 col-12-medium">
 								<section>
 									<header>
-										<h2>Blandit nisl adipiscing</h2>
 									</header>
-									<ul class="dates">
-										<li>
-											<span class="date">Jan <strong>27</strong></span>
-											<h3><a href="#">Lorem dolor sit amet veroeros</a></h3>
-											<p>Ipsum dolor sit amet veroeros consequat blandit ipsum phasellus lorem consequat etiam.</p>
-										</li>
-										<li>
-											<span class="date">Jan <strong>23</strong></span>
-											<h3><a href="#">Ipsum sed blandit nisl consequat</a></h3>
-											<p>Blandit phasellus lorem ipsum dolor tempor sapien tortor hendrerit adipiscing feugiat lorem.</p>
-										</li>
-										<li>
-											<span class="date">Jan <strong>15</strong></span>
-											<h3><a href="#">Magna tempus lorem feugiat</a></h3>
-											<p>Dolore consequat sed phasellus lorem sed etiam nullam dolor etiam sed amet sit consequat.</p>
-										</li>
-										<li>
-											<span class="date">Jan <strong>12</strong></span>
-											<h3><a href="#">Dolore tempus ipsum feugiat nulla</a></h3>
-											<p>Feugiat lorem dolor sed nullam tempus lorem ipsum dolor sit amet nullam consequat.</p>
-										</li>
-										<li>
-											<span class="date">Jan <strong>10</strong></span>
-											<h3><a href="#">Blandit tempus aliquam?</a></h3>
-											<p>Feugiat sed tempus blandit tempus adipiscing nisl lorem ipsum dolor sit amet dolore.</p>
-										</li>
-									</ul>
+									
 								</section>
 							</div>
 							<div class="col-4 col-12-medium">
-								<section>
-									<header>
-										<h2>What's this all about?</h2>
-									</header>
-									<a href="#" class="image featured"><img src="images/pic10.jpg" alt="" /></a>
-									<p>
-										This is <strong>Dopetrope</strong> a free, fully responsive HTML5 site template by
-										<a href="http://twitter.com/ajlkn">AJ</a> for <a href="http://html5up.net/">HTML5 UP</a> It's released for free under
-										the <a href="http://html5up.net/license/">Creative Commons Attribution</a> license so feel free to use it for any personal or commercial project &ndash; just don't forget to credit us!
-									</p>
-									<footer>
-										<ul class="actions">
-											<li><a href="#" class="button">Find out more</a></li>
-										</ul>
-									</footer>
-								</section>
 							</div>
 							<div class="col-4 col-6-medium col-12-small">
 								<section>
