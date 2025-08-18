@@ -14,14 +14,14 @@
   <meta property="og:image" content="images/pic02.jpg">
   <meta name="twitter:card" content="summary_large_image">
 
-  <!-- JSON-LD: Organization (optional) -->
+  <!-- JSON-LD: Organization -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@type":"Organization",
     "name":"ONLYDEALS",
-    "url":"https://YOUR_DOMAIN/",
-    "sameAs":["https://github.com/YOUR_USERNAME"]
+    "url":"https://onlydeals.github.io/deals/",
+    "sameAs":["https://github.com/ANASTASIA_AI"]
   }
   </script>
 
@@ -79,7 +79,7 @@
         </div>
       </div>
     </section>
-  </section>
+  </section> <!-- end header -->
 
   <!-- Categories -->
   <section id="categories" class="container">
@@ -99,77 +99,15 @@
     <div class="container" id="deals">
       <header class="major"><h2>Today’s Editor Picks</h2></header>
       <div class="row">
-
-        <!-- DEAL CARD (duplicate as needed) -->
-        <div class="col-4 col-6-medium col-12-small" id="deals-tech">
-          <section class="box">
-            <a class="image featured" href="#YOUR_AFF_LINK#?utm_source=onlydeals&utm_medium=site&utm_campaign=tech"
-               target="_blank" rel="nofollow sponsored noopener">
-              <img src="images/pic02.jpg" alt="Wireless earbuds with ANC" loading="lazy" />
-            </a>
-            <header>
-              <h3>ANC Wireless Earbuds</h3>
-              <p><strong>$49.99</strong> <del>$99.99</del> · Ends tonight</p>
-            </header>
-            <ul>
-              <li>Active noise canceling · Bluetooth 5.3</li>
-              <li>IPX5 water-resistant · 30h case</li>
-            </ul>
-            <footer>
-              <a class="button icon solid fa-shopping-cart"
-                 href="#YOUR_AFF_LINK#?utm_source=onlydeals&utm_medium=site&utm_campaign=tech"
-                 target="_blank" rel="nofollow sponsored noopener">Get Deal</a>
-              <a class="button alt" href="#price-terms" aria-label="See price terms">Price terms</a>
-            </footer>
-          </section>
-        </div>
-
-        <div class="col-4 col-6-medium col-12-small" id="deals-home">
-          <section class="box">
-            <a class="image featured" href="#YOUR_AFF_LINK#"
-               target="_blank" rel="nofollow sponsored noopener">
-              <img src="images/pic03.jpg" alt="Robot vacuum cleaner" loading="lazy" />
-            </a>
-            <header>
-              <h3>Robot Vacuum w/ Mapping</h3>
-              <p><strong>$179</strong> <del>$299</del> · Coupon CLIP10</p>
-            </header>
-            <ul>
-              <li>Multi-room mapping · Auto-dock</li>
-              <li>Great for pets & carpets</li>
-            </ul>
-            <footer>
-              <a class="button icon solid fa-shopping-cart" href="#YOUR_AFF_LINK#"
-                 target="_blank" rel="nofollow sponsored noopener">Get Deal</a>
-            </footer>
-          </section>
-        </div>
-
-        <div class="col-4 col-6-medium col-12-small" id="deals-fitness">
-          <section class="box">
-            <a class="image featured" href="#YOUR_AFF_LINK#"
-               target="_blank" rel="nofollow sponsored noopener">
-              <img src="images/pic04.jpg" alt="Adjustable dumbbells set" loading="lazy" />
-            </a>
-            <header>
-              <h3>Adjustable Dumbbells (25 lb)</h3>
-              <p><strong>$89</strong> <del>$149</del> · Limited stock</p>
-            </header>
-            <ul>
-              <li>2.5 lb increments · Compact stand</li>
-            </ul>
-            <footer>
-              <a class="button icon solid fa-shopping-cart" href="#YOUR_AFF_LINK#"
-                 target="_blank" rel="nofollow sponsored noopener">Get Deal</a>
-            </footer>
-          </section>
-        </div>
-
+        <div class="col-4 col-6-medium col-12-small" id="deals-tech" data-q="wireless earbuds"></div>
+        <div class="col-4 col-6-medium col-12-small" id="deals-home" data-q="robot vacuum"></div>
+        <div class="col-4 col-6-medium col-12-small" id="deals-fitness" data-q="adjustable dumbbells"></div>
       </div>
     </div>
 
-    <!-- Newsletter
-   <div class="container" id="newsletter" style="margin-top:2rem">
+    <!-- Newsletter (keep for later) -->
+    <!--
+    <div class="container" id="newsletter" style="margin-top:2rem">
       <section class="box">
         <header class="major"><h2>Get the daily short list</h2></header>
         <form action="https://YOUR_EMAIL_PROVIDER_ENDPOINT" method="post">
@@ -184,7 +122,8 @@
           <p style="font-size:.9rem;opacity:.8">No spam. One email most weekdays. Unsubscribe anytime.</p>
         </form>
       </section>
-    </div> -->
+    </div>
+    -->
   </section> 
 
   <!-- Footer -->
@@ -215,7 +154,7 @@
           <div id="copyright">
             <ul class="links">
               <li>&copy; <span id="yr"></span> ONLYDEALS. All rights reserved.</li>
-              <li>Theme base: <a href="https://html5up.net">HTML5 UP</a></li>
+              <!-- <li>Theme base: <a href="https://html5up.net">HTML5 UP</a></li> -->
             </ul>
           </div>
         </div>
@@ -223,110 +162,23 @@
     </div>
   </section>
 
-</div>
+</div> <!-- end page-wrapper -->
 
-		
-			
-			<!-- Footer -->
-				<section id="footer">
-					<div class="container">
-						<div class="row">
-							<div class="col-8 col-12-medium">
-								<section>
-									<header>
-									</header>
-									
-								</section>
-							</div>
-							<div class="col-4 col-12-medium">
-							</div>
-							<div class="col-4 col-6-medium col-12-small">
-								<!-- <section>
-									<header>
-										<h2>Tempus consequat</h2>
-									</header>
-									<ul class="divided">
-										<li><a href="#">Lorem ipsum dolor sit amet sit veroeros</a></li>
-										<li><a href="#">Sed et blandit consequat sed tlorem blandit</a></li>
-										<li><a href="#">Adipiscing feugiat phasellus sed tempus</a></li>
-										<li><a href="#">Hendrerit tortor vitae mattis tempor sapien</a></li>
-										<li><a href="#">Sem feugiat sapien id suscipit magna felis nec</a></li>
-										<li><a href="#">Elit class aptent taciti sociosqu ad litora</a></li>
-									</ul>
-								</section> -->
-							<!-- </div> -->
-				
-							<!-- <div class="col-4 col-6-medium col-12-small">
-								<section>
-									<header>
-										<h2>Ipsum et phasellus</h2>
-									</header>
-									<ul class="divided">
-										<li><a href="#">Lorem ipsum dolor sit amet sit veroeros</a></li>
-										<li><a href="#">Sed et blandit consequat sed tlorem blandit</a></li>
-										<li><a href="#">Adipiscing feugiat phasellus sed tempus</a></li>
-										<li><a href="#">Hendrerit tortor vitae mattis tempor sapien</a></li>
-										<li><a href="#">Sem feugiat sapien id suscipit magna felis nec</a></li>
-										<li><a href="#">Elit class aptent taciti sociosqu ad litora</a></li>
-									</ul>
-								</section>
-							</div> -->
-							
-							<div class="col-4 col-12-medium">
-								<section>
-									<header>
-										<h2>Vitae tempor lorem</h2>
-									</header>
-									<ul class="social">
-										<li><a class="icon brands fa-facebook-f" href="#"><span class="label">Facebook</span></a></li>
-										<li><a class="icon brands fa-twitter" href="#"><span class="label">Twitter</span></a></li>
-										<li><a class="icon brands fa-dribbble" href="#"><span class="label">Dribbble</span></a></li>
-										<li><a class="icon brands fa-tumblr" href="#"><span class="label">Tumblr</span></a></li>
-										<li><a class="icon brands fa-linkedin-in" href="#"><span class="label">LinkedIn</span></a></li>
-									</ul>
-									<ul class="contact">
-										<!-- <li>
-											<h3>Address</h3>
-											<p>
-												Untitled Incorporated<br />
-												1234 Somewhere Road Suite<br />
-												Nashville, TN 00000-0000
-											</p>
-										</li> -->
-										<li>
-											<h3>Mail</h3>
-											<p><a href="#">affiliatelinks@engineer.com</a></p>
-										</li>
-										<li>
-											<h3>Phone</h3>
-											<p>(800) 000-0000</p>
-										</li>
-									</ul>
-								</section>
-							</div>
-							<div class="col-12">
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.dropotron.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/rover_ebay.js"></script>
 
-								<!-- Copyright -->
-									<div id="copyright">
-										<ul class="links">
-											<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-										</ul>
-									</div>
+<!-- Dynamic copyright year -->
+<script>
+  document.getElementById("yr").textContent = new Date().getFullYear();
+</script>
 
-							</div>
-						</div>
-					</div>
-				</section>
-
-		</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+</body>
 </html>
+
+

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>ONLYDEALS JS Test</title>
+</head>
+<body>
+  <h1>Testing eBay Deals Script</h1>
+
+  <div id="deals-tech" data-q="wireless earbuds">
+    <p>Loading deals…</p>
+  </div>
+
+  <!-- Correct relative path (no file:/// or /Users/...) -->
+  <script src="assets/js/rover_ebay.js?v=1"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      hydrateGrid("deals-tech");
+    });
+  </script>
+</body>
+</html>
