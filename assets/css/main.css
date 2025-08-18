@@ -2903,6 +2903,22 @@ input, select, textarea {
 
 			#footer {
 				padding: 40px 0 20px 0;
+				/* display: flex;              
+				justify-content: center;     */
 			}
+
+			/*.homepage #footer ul.social {
+				display: flex;              
+				justify-content: center;   
+				gap: 1rem;                  
+				padding: 0;
+				list-style: none;
+				margin: 1rem auto;
+				}
+
+				.homepage #footer ul.social li {
+				display: inline-block;
+				}*/
+
 
 	}
