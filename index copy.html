@@ -5,12 +5,8 @@
   <title>ONLYDEALS — Today’s Best Deals, Curated</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Hand-picked daily deals on tech, home, and lifestyle. Fast, no fluff.">
-
   <link rel="stylesheet" href="assets/css/main.css" />
-
-  <!-- Optional: remove if you don't actually use this hero image immediately -->
   <link rel="preload" as="image" href="images/pic02.jpg">
-
   <meta property="og:title" content="ONLYDEALS — Today’s Best Deals">
   <meta property="og:description" content="Hand-picked daily deals on tech, home, and lifestyle." />
   <meta property="og:type" content="website">
@@ -29,9 +25,8 @@
   }
   </script>
 
-  <!-- Notes:
-      Your theme CSS references the banner bg as url("images/bg.png") from assets/css/,
-      which resolves to assets/css/images/bg.png — make sure that file exists (it does). -->
+  <!-- Optional: Google Tag Manager / analytics -->
+  <!-- <script>/* GTM snippet here */</script> -->
 </head>
 <body class="homepage is-preload">
 <div id="page-wrapper">
@@ -64,8 +59,8 @@
         <div class="col-4 col-12-medium">
           <section class="first">
             <i class="icon solid featured fa-bolt"></i>
-            <header><h2>Daily &amp; Verified</h2></header>
-            <p>We check price history &amp; availability before posting.</p>
+            <header><h2>Daily & Verified</h2></header>
+            <p>We check price history & availability before posting.</p>
           </section>
         </div>
         <div class="col-4 col-12-medium">
@@ -89,17 +84,26 @@
   <!-- Categories -->
   <section id="categories" class="container">
     <header class="major">
-      <!-- <h2>Browse by Category</h2> -->
-    </header>
+		<!-- <h2>Browse by Category</h2></header> -->
     <ul class="actions" style="flex-wrap:wrap;gap:.5rem">
-      <!-- future category anchors -->
+      <!-- <li><a class="button alt" href="#deals-tech">Tech</a></li>
+      <li><a class="button alt" href="#deals-home">Home</a></li>
+      <li><a class="button alt" href="#deals-beauty">Beauty</a></li>
+      <li><a class="button alt" href="#deals-fitness">Fitness</a></li>
+      <li><a class="button alt" href="#deals-fashion">Fashion</a></li> -->
     </ul>
   </section>
 
-  <!-- Main -->
+  <!-- Deals Grid -->
   <section id="main">
-    <!-- We inject the deals partial here -->
-    <div id="deals-container"></div>
+    <div class="container" id="deals">
+      <header class="major"><h2>Today’s Editor Picks</h2></header>
+      <div class="row">
+        <div class="col-4 col-6-medium col-12-small" id="deals-tech" data-q="wireless earbuds"></div>
+        <div class="col-4 col-6-medium col-12-small" id="deals-home" data-q="robot vacuum"></div>
+        <div class="col-4 col-6-medium col-12-small" id="deals-fitness" data-q="adjustable dumbbells"></div>
+      </div>
+    </div>
 
     <!-- Newsletter (keep for later) -->
     <!--
@@ -160,38 +164,30 @@
 
 </div> <!-- end page-wrapper -->
 
-<!-- Scripts (theme) -->
+<!-- Scripts -->
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/jquery.dropotron.min.js"></script>
 <script src="assets/js/browser.min.js"></script>
 <script src="assets/js/breakpoints.min.js"></script>
 <script src="assets/js/util.js"></script>
 <script src="assets/js/main.js"></script>
-
-<!-- Our eBay script (cache-busted) -->
-<script src="./assets/js/rover_ebay.js?v=8" defer></script>
-
-<!-- Inject partial + hydrate -->
+<!-- our script (cache-busted) -->
+<script src="./assets/js/rover_ebay.js?v=7" defer></script>
 <script>
-  document.addEventListener("DOMContentLoaded", async () => {
-    try {
-      // FIXED PATH:
-      const res = await fetch("./partials_html/deals.html", { cache: "no-store" });
-      if (!res.ok) throw new Error("Failed to load deals partial");
-      const html = await res.text();
-      document.getElementById("deals-container").innerHTML = html;
-
-      // hydrate the three slots
-      document.querySelectorAll(".ebay-grid, #deals-tech, #deals-home, #deals-fitness")
-        .forEach(el => el.id && hydrateGrid(el.id));
-    } catch (err) {
-      console.error("Error loading partial:", err);
-      document.getElementById("deals-container").innerHTML =
-        "<div class='container'><p>Couldn’t load deals right now.</p></div>";
-    }
+  document.addEventListener('DOMContentLoaded', () => {
+    // Auto-hydrate any container with class="ebay-grid"
+    document.querySelectorAll('.ebay-grid').forEach(el => {
+      hydrateGrid(el.id);   // defined in rover_ebay.js
+    });
   });
 </script>
 
+<!-- Dynamic copyright year -->
+<script>
+  document.getElementById("yr").textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
+
+

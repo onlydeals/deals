@@ -29,7 +29,7 @@ async function fetchSearchHtml(q) {
   return await r.text();
 }
 
-function parseSearchHtml(html, limit = 9) {
+function parseSearchHtml_old(html, limit = 9) {
   const doc = new DOMParser().parseFromString(html, "text/html");
 
   const results = doc.querySelector(".srp-results");
@@ -59,6 +59,71 @@ function parseSearchHtml(html, limit = 9) {
   if (!items.length) throw new Error("No valid items parsed");
   return items;
 }
+function parseSearchHtml(html, limit = 9) {
+  const doc = new DOMParser().parseFromString(html, "text/html");
+
+  // ---- 1) Try JSON-LD itemListElement (most robust) ----
+  const ldScripts = Array.from(doc.querySelectorAll('script[type="application/ld+json"]'));
+  for (const s of ldScripts) {
+    try {
+      const json = JSON.parse(s.textContent || "null");
+      // Look for a list with itemListElement (schema.org/SearchResultsPage style)
+      const list = json && (json.itemListElement || (Array.isArray(json) && json.find(x => x.itemListElement)?.itemListElement));
+      if (Array.isArray(list) && list.length) {
+        const items = list
+          .map((el, idx) => {
+            const it = el.item || el; // some pages nest under item
+            const title = it.name || "";
+            const link  = it.url  || "";
+            const img   = (it.image && (Array.isArray(it.image) ? it.image[0] : it.image)) || "";
+            const offer = it.offers || {};
+            const price = (offer.priceCurrency ? (offer.priceCurrency + " ") : "") + (offer.price || "");
+            return { title, link, img, price, customid: "ldjson_"+idx };
+          })
+          .filter(x => x.link); // must have a url
+        if (items.length) return items.slice(0, limit);
+      }
+    } catch (_) { /* ignore parse errors and continue */ }
+  }
+
+  // ---- 2) Fall back to DOM selectors inside results container ----
+  // Try several containers eBay uses
+  const containers = [
+    doc.querySelector(".srp-results"),             // common
+    doc.querySelector("#srp-river-results"),       // older
+    doc.querySelector('[data-search-results]')     // safety
+  ].filter(Boolean);
+
+  for (const container of containers) {
+    let cards = Array.from(container.querySelectorAll("li.s-item"));
+    if (!cards.length) cards = Array.from(container.querySelectorAll("[data-view*='mi:'], [data-view*='iid:']"));
+
+    // skip obvious ads/sponsored
+    cards = cards.filter(li => !/Sponsored|AdChoice/i.test(li.textContent || ""));
+
+    const items = cards.slice(0, limit).map((li, idx) => {
+      const a = li.querySelector("a.s-item__link") || li.querySelector("a[href*='/itm/']");
+      const imgEl = li.querySelector("img.s-item__image-img") || li.querySelector("img");
+      const titleEl = li.querySelector(".s-item__title") || li.querySelector("[role='heading']");
+      const priceEl = li.querySelector(".s-item__price") || li.querySelector("[data-testid='x-price']");
+
+      const link  = a?.href || "";
+      const img   = imgEl?.getAttribute("src") || imgEl?.getAttribute("data-src") || "";
+      const rawTitle = (titleEl?.textContent || "").trim();
+      const title = rawTitle.replace(/^\s*New Listing\s*/i, "") || "eBay item";
+      const price = (priceEl?.textContent || "").trim();
+
+      return { title, link, img, price, customid: "html_"+idx };
+    }).filter(x => x.link);
+
+    if (items.length) return items.slice(0, limit);
+  }
+
+  // ---- 3) If still nothing, log a snippet to help debug and throw ----
+  console.warn("Parser fallback: no results. First 300 chars:", html.slice(0, 300));
+  throw new Error("No valid items parsed");
+}
+
 
 function simpleCardHtml(item) {
   const href = roverLink(item.link, item.customid);
