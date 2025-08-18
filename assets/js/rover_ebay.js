@@ -125,9 +125,9 @@ function parseSearchHtml(html, limit = 9) {
 }
 
 
-function simpleCardHtml(item) {
+function simpleCardHtml_old(item) {
   const href = roverLink(item.link, item.customid);
-  const img  = item.img || "images/pic02.jpg";
+  const img  = item.img || "../images/pic02.jpg";
   const price = item.price ? `<p><strong>${item.price}</strong></p>` : "";
   return `
     <div class="card">
@@ -157,6 +157,55 @@ async function hydrateGridSimple(elId) {
 }
 
 // Hydrator used by your main index if you prefer (same logic but expects the 3 columns)
-async function hydrateGrid(gridId) {
+async function hydrateGrid_old(gridId) {
   return hydrateGridSimple(gridId);
+}
+
+
+
+
+function simpleCardHtml(item) {
+  const href = roverLink(item.link, item.customid);
+  let img  = item.img || "../images/pic02.jpg";
+  if (img.startsWith("//")) img = "https:" + img; // normalize protocol-relative
+  const title = (item.title || "eBay item").replace(/"/g, "&quot;");
+  const price = item.price ? `<p><strong>${item.price}</strong></p>` : "";
+  return `
+    <div class="col-4 col-6-medium col-12-small">
+      <section class="box">
+        <a href="${href}" class="image featured" target="_blank" rel="nofollow sponsored noopener">
+          <img src="${img}" alt="${title}" loading="lazy" />
+        </a>
+        <header><h3>${title}</h3></header>
+        ${price}
+        <footer>
+          <a class="button icon solid fa-shopping-cart" href="${href}" target="_blank" rel="nofollow sponsored noopener">
+            View on eBay
+          </a>
+        </footer>
+      </section>
+    </div>
+  `;
+}
+
+// Hydrator used by both test + main page
+async function hydrateGrid(gridId) {
+  const el = document.getElementById(gridId);
+  if (!el) return;
+
+  // prevent duplicates if something calls this twice
+  if (el.dataset.hydrated === "1") return;
+  el.dataset.hydrated = "1";
+
+  const q = el.dataset.q || "wireless earbuds";
+  el.innerHTML = ""; // clear before render
+
+  try {
+    const html  = await fetchSearchHtml(q);
+    const items = parseSearchHtml(html, 9);
+    el.innerHTML = items.map(simpleCardHtml).join("");
+  } catch (e) {
+    console.error(e);
+    el.innerHTML = `<p>Couldn't load eBay deals right now.</p>`;
+  }
 }
