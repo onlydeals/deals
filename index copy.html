@@ -1,193 +1,283 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>ONLYDEALS — Today’s Best Deals, Curated</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Hand-picked daily deals on tech, home, and lifestyle. Fast, no fluff.">
-  <link rel="stylesheet" href="assets/css/main.css" />
-  <link rel="preload" as="image" href="images/pic02.jpg">
-  <meta property="og:title" content="ONLYDEALS — Today’s Best Deals">
-  <meta property="og:description" content="Hand-picked daily deals on tech, home, and lifestyle." />
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://onlydeals.github.io/deals/">
-  <meta property="og:image" content="images/pic02.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-
-  <!-- JSON-LD: Organization -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Organization",
-    "name":"ONLYDEALS",
-    "url":"https://onlydeals.github.io/deals/",
-    "sameAs":["https://github.com/ANASTASIA_AI"]
-  }
-  </script>
-
-  <!-- Optional: Google Tag Manager / analytics -->
-  <!-- <script>/* GTM snippet here */</script> -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eBay Link Debugger - ONLYDEALS</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .input-group {
+            margin-bottom: 25px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #2c5aa0;
+        }
+        
+        input[type="text"] {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        input[type="text"]:focus {
+            border-color: #4a6fc0;
+            outline: none;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #4a6fc0;
+            color: white;
+            padding: 14px 25px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .btn:hover {
+            background: #3a5ca9;
+        }
+        
+        .result {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #4a6fc0;
+        }
+        
+        .result h3 {
+            color: #2c5aa0;
+            margin-bottom: 15px;
+        }
+        
+        .url-display {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+            font-family: 'Fira Code', monospace;
+            margin-bottom: 20px;
+        }
+        
+        .test-link {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: #e53238;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        
+        .test-link:hover {
+            background: #c41c23;
+        }
+        
+        .explanation {
+            margin-top: 40px;
+            padding: 20px;
+            background: #fff4e6;
+            border-radius: 8px;
+            border-left: 4px solid #ffa94d;
+        }
+        
+        .explanation h3 {
+            color: #e67700;
+            margin-bottom: 15px;
+        }
+        
+        .code {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+            font-family: 'Fira Code', monospace;
+            margin: 15px 0;
+            font-size: 14px;
+        }
+        
+        .keyword {
+            color: #ff79c6;
+        }
+        
+        .function {
+            color: #50fa7b;
+        }
+        
+        .string {
+            color: #f1fa8c;
+        }
+        
+        .comment {
+            color: #6272a4;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                border-radius: 0;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
-<body class="homepage is-preload">
-<div id="page-wrapper">
-
-  <!-- Header / Nav -->
-  <section id="header">
-    <h1><a href="index.html">ONLYDEALS</a></h1>
-    <nav id="nav" aria-label="Primary">
-      <ul>
-        <li class="current"><a href="index.html">Home</a></li>
-        <!-- <li><a href="#categories">Categories</a></li> -->
-        <li><a href="#deals">Today’s Deals</a></li>
-        <!-- <li><a href="#newsletter">Subscribe</a></li> -->
-        <li><a href="#disclosure">Disclosure</a></li>
-      </ul>
-    </nav>
-
-    <!-- Hero -->
-    <section id="banner">
-      <header>
-        <h2>Best deals. Zero noise.</h2>
-        <p>Three-minute scroll. Maximum savings.</p>
-        <a class="button large" href="#deals">Shop Today’s Picks</a>
-      </header>
-    </section>
-
-    <!-- Quick value props -->
-    <section id="intro" class="container" aria-label="Highlights">
-      <div class="row">
-        <div class="col-4 col-12-medium">
-          <section class="first">
-            <i class="icon solid featured fa-bolt"></i>
-            <header><h2>Daily & Verified</h2></header>
-            <p>We check price history & availability before posting.</p>
-          </section>
-        </div>
-        <div class="col-4 col-12-medium">
-          <section class="middle">
-            <i class="icon solid featured alt fa-shield-alt"></i>
-            <header><h2>No Spam, Just Deals</h2></header>
-            <p>Curated essentials, not a firehose.</p>
-          </section>
-        </div>
-        <div class="col-4 col-12-medium">
-          <section class="last">
-            <i class="icon solid featured alt2 fa-tags"></i>
-            <header><h2>Affiliate-Supported</h2></header>
-            <p>Links may earn us a commission—at no cost to you.</p>
-          </section>
-        </div>
-      </div>
-    </section>
-  </section> <!-- end header -->
-
-  <!-- Categories -->
-  <section id="categories" class="container">
-    <header class="major">
-		<!-- <h2>Browse by Category</h2></header> -->
-    <ul class="actions" style="flex-wrap:wrap;gap:.5rem">
-      <!-- <li><a class="button alt" href="#deals-tech">Tech</a></li>
-      <li><a class="button alt" href="#deals-home">Home</a></li>
-      <li><a class="button alt" href="#deals-beauty">Beauty</a></li>
-      <li><a class="button alt" href="#deals-fitness">Fitness</a></li>
-      <li><a class="button alt" href="#deals-fashion">Fashion</a></li> -->
-    </ul>
-  </section>
-
-  <!-- Deals Grid -->
-  <section id="main">
-    <div class="container" id="deals">
-      <header class="major"><h2>Today’s Editor Picks</h2></header>
-      <div class="row">
-        <div class="col-4 col-6-medium col-12-small" id="deals-tech" data-q="wireless earbuds"></div>
-        <div class="col-4 col-6-medium col-12-small" id="deals-home" data-q="robot vacuum"></div>
-        <div class="col-4 col-6-medium col-12-small" id="deals-fitness" data-q="adjustable dumbbells"></div>
-      </div>
-    </div>
-
-    <!-- Newsletter (keep for later) -->
-    <!--
-    <div class="container" id="newsletter" style="margin-top:2rem">
-      <section class="box">
-        <header class="major"><h2>Get the daily short list</h2></header>
-        <form action="https://YOUR_EMAIL_PROVIDER_ENDPOINT" method="post">
-          <div class="row gtr-50">
-            <div class="col-8 col-12-small">
-              <input type="email" name="email" placeholder="you@example.com" required />
-            </div>
-            <div class="col-4 col-12-small">
-              <button class="button fit" type="submit">Subscribe</button>
-            </div>
-          </div>
-          <p style="font-size:.9rem;opacity:.8">No spam. One email most weekdays. Unsubscribe anytime.</p>
-        </form>
-      </section>
-    </div>
-    -->
-  </section> 
-
-  <!-- Footer -->
-  <section id="footer">
+<body>
     <div class="container">
-      <div class="row">
-        <div class="col-8 col-12-medium" id="disclosure">
-          <section>
-            <header><h2>Affiliate Disclosure</h2></header>
-            <p>
-              ONLYDEALS may earn a commission from qualifying purchases made through links on this site.
-              This helps keep the site running at no extra cost to you. Prices and coupons can change quickly—please
-              confirm at checkout.
-            </p>
-          </section>
+        <header>
+            <h1>eBay Link Debugger</h1>
+            <p class="subtitle">ONLYDEALS Affiliate Link Troubleshooter</p>
+        </header>
+        
+        <div class="content">
+            <div class="input-group">
+                <label for="item-url">eBay Item URL</label>
+                <input type="text" id="item-url" placeholder="https://www.ebay.com/itm/123456789" value="https://www.ebay.com/itm/405424132378">
+            </div>
+            
+            <div class="input-group">
+                <label for="campaign-id">Campaign ID (Optional)</label>
+                <input type="text" id="campaign-id" placeholder="5339119674" value="5339119674">
+            </div>
+            
+            <button class="btn" onclick="generateLink()">Generate Rover Link</button>
+            
+            <div class="result" id="result" style="display: none;">
+                <h3>Generated Rover Link</h3>
+                <div class="url-display" id="generated-url"></div>
+                
+                <h3>URL Breakdown</h3>
+                <div id="url-breakdown"></div>
+                
+                <a href="#" class="test-link" id="test-link" target="_blank">Test This Link</a>
+            </div>
+            
+            <div class="explanation">
+                <h3>Why Your Links Might Not Work</h3>
+                <p>The most common issue with eBay affiliate links is incorrect encoding of the <code>mpre</code> parameter. Here's the correct way to generate Rover links:</p>
+                
+                <div class="code">
+                    <span class="keyword">function</span> <span class="function">roverLink</span>(rawUrl, customid = <span class="string">""</span>) {<br>
+                    &nbsp;&nbsp;<span class="comment">// Normalize the eBay URL first</span><br>
+                    &nbsp;&nbsp;<span class="keyword">const</span> itemUrl = normalizeEbayItemUrl(rawUrl);<br><br>
+                    
+                    &nbsp;&nbsp;<span class="comment">// Create the base Rover URL</span><br>
+                    &nbsp;&nbsp;<span class="keyword">const</span> u = <span class="keyword">new</span> URL(<span class="string">"https://rover.ebay.com/rover/1/711-53200-19255-0/1"</span>);<br>
+                    &nbsp;&nbsp;u.searchParams.set(<span class="string">"campid"</span>, CAMPID);<br>
+                    &nbsp;&nbsp;u.searchParams.set(<span class="string">"toolid"</span>, <span class="string">"10001"</span>);<br>
+                    &nbsp;&nbsp;<span class="keyword">if</span> (customid) u.searchParams.set(<span class="string">"customid"</span>, customid);<br><br>
+                    
+                    &nbsp;&nbsp;<span class="comment">// CRITICAL: Properly encode the mpre parameter</span><br>
+                    &nbsp;&nbsp;u.searchParams.set(<span class="string">"mpre"</span>, itemUrl);<br><br>
+                    
+                    &nbsp;&nbsp;<span class="keyword">return</span> u.toString();<br>
+                    }
+                </div>
+                
+                <p>Make sure you're not double-encoding the URL. The <code>URLSearchParams.set()</code> method will handle encoding automatically.</p>
+            </div>
         </div>
-        <div class="col-4 col-12-medium">
-          <section>
-            <header><h2>Contact</h2></header>
-            <ul class="divided">
-              <li><a href="mailto:affliliatelinks@engineer.com">affliliatelinks@engineer.com</a></li>
-              <li><a href="/privacy.html">Privacy</a></li>
-              <li><a href="/terms.html">Terms</a></li>
-            </ul>
-          </section>
-        </div>
-        <div class="col-12">
-          <div id="copyright">
-            <ul class="links">
-              <li>&copy; <span id="yr"></span> ONLYDEALS. All rights reserved.</li>
-              <!-- <li>Theme base: <a href="https://html5up.net">HTML5 UP</a></li> -->
-            </ul>
-          </div>
-        </div>
-      </div>
     </div>
-  </section>
 
-</div> <!-- end page-wrapper -->
-
-<!-- Scripts -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/jquery.dropotron.min.js"></script>
-<script src="assets/js/browser.min.js"></script>
-<script src="assets/js/breakpoints.min.js"></script>
-<script src="assets/js/util.js"></script>
-<script src="assets/js/main.js"></script>
-<!-- our script (cache-busted) -->
-<script src="./assets/js/rover_ebay.js?v=7" defer></script>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    // Auto-hydrate any container with class="ebay-grid"
-    document.querySelectorAll('.ebay-grid').forEach(el => {
-      hydrateGrid(el.id);   // defined in rover_ebay.js
-    });
-  });
-</script>
-
-<!-- Dynamic copyright year -->
-<script>
-  document.getElementById("yr").textContent = new Date().getFullYear();
-</script>
-
+    <script>
+        function generateLink() {
+            const itemUrl = document.getElementById('item-url').value;
+            const campaignId = document.getElementById('campaign-id').value;
+            
+            if (!itemUrl) {
+                alert('Please enter an eBay item URL');
+                return;
+            }
+            
+            // Create the Rover URL
+            const u = new URL("https://rover.ebay.com/rover/1/711-53200-19255-0/1");
+            u.searchParams.set("campid", campaignId || "5339119674");
+            u.searchParams.set("toolid", "10001");
+            u.searchParams.set("mpre", itemUrl);
+            
+            const roverUrl = u.toString();
+            
+            // Display the result
+            document.getElementById('generated-url').textContent = roverUrl;
+            document.getElementById('test-link').href = roverUrl;
+            
+            // Create URL breakdown
+            const breakdown = `
+                <p><strong>Base URL:</strong> https://rover.ebay.com/rover/1/711-53200-19255-0/1</p>
+                <p><strong>campid:</strong> ${u.searchParams.get('campid')}</p>
+                <p><strong>toolid:</strong> ${u.searchParams.get('toolid')}</p>
+                <p><strong>mpre:</strong> ${u.searchParams.get('mpre')}</p>
+            `;
+            
+            document.getElementById('url-breakdown').innerHTML = breakdown;
+            document.getElementById('result').style.display = 'block';
+        }
+        
+        // Generate a link on page load for the default example
+        window.onload = generateLink;
+    </script>
 </body>
 </html>
-
-
